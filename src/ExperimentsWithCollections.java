@@ -60,12 +60,34 @@ public class ExperimentsWithCollections {
 
         System.out.println("Удаление String-элементов - четных чисел (чистая функция):");
         System.out.println(e);
-        deleteEvenNotHonestly(e);
+        System.out.println(deleteEvenHonestly(e));
         System.out.println(e);
         System.out.println("Удаление String-элементов - четных чисел (нечистая функция):");
         System.out.println(f);
         deleteEvenNotHonestly(f);
         System.out.println(f);
+
+
+        List<Integer> h = new ArrayList<>();
+        h.add(1);
+        h.add(2);
+        h.add(54);
+        h.add(9);
+
+        List<Integer> g = new ArrayList<>();
+        g.add(1);
+        g.add(2);
+        g.add(43);
+        g.add(6);
+
+        System.out.println("Удаление Integer-элементов - четных чисел (чистая функция):");
+        System.out.println(h);
+        System.out.println(deleteEvenIntegerHonestly(h));
+        System.out.println(h);
+        System.out.println("Удаление Integer-элементов - четных чисел (нечистая функция):");
+        System.out.println(g);
+        deleteEvenIntegerNotHonestly(g);
+        System.out.println(g);
     }
 
     public static List<Integer> makeListInt() {
@@ -147,5 +169,20 @@ public class ExperimentsWithCollections {
         }
     }
 
+    public static List<Integer> deleteEvenIntegerHonestly(List<Integer> a) {
+        List<Integer> resultList = new ArrayList<>();
+        for (int num : a) {
+            if (num % 2 == 1) resultList.add(num);
+        }
+        return resultList;
+    }
 
+    public static void deleteEvenIntegerNotHonestly(List<Integer> a) {
+        for (int i = a.size() - 1; i >= 0; i--) {
+            int num = a.get(i);
+            if (num % 2 == 0) a.remove(i);
+        }
+
+
+    }
 }
