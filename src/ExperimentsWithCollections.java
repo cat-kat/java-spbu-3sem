@@ -1,8 +1,9 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.io.File;
+import java.io.IOException;
+import java.util.*;
 
 public class ExperimentsWithCollections {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         System.out.println("Список от 1 до 100:");
         List<Integer> example = makeListInt();
         System.out.println(example);
@@ -88,6 +89,10 @@ public class ExperimentsWithCollections {
         System.out.println(g);
         deleteEvenIntegerNotHonestly(g);
         System.out.println(g);
+
+        System.out.println("Игры с set-ами:");
+        findWordsSet("resources/pushkin.txt");
+
     }
 
     public static List<Integer> makeListInt() {
@@ -182,7 +187,33 @@ public class ExperimentsWithCollections {
             int num = a.get(i);
             if (num % 2 == 0) a.remove(i);
         }
-
-
     }
+
+
+    public static void findWordsSet(String s) throws IOException {
+        Set<String> type1 = new HashSet<>();
+        Set<String> type2 = new TreeSet<>();
+        Set<String> type3 = new LinkedHashSet<>();
+        findWords(type1, s);
+        findWords(type2, s);
+        findWords(type3, s);
+    }
+
+    public static void findWords(Set<String> t, String s) throws IOException {
+        File f = new File(s);
+        try (Scanner in = new Scanner(f, "utf8")) {
+            while (in.hasNext()) {
+                String word = in.next().toLowerCase().replaceAll("[^а-яА-Я0-9\\s]", "");
+                ;
+                t.add(word);
+            }
+        }
+        System.out.println(t.getClass().getName() + ":");
+        for (String word : t) {
+            System.out.print(word + " ");
+        }
+        System.out.println();
+    }
+
+
 }
