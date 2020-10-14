@@ -1,10 +1,13 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.*;
 
 public class ExperimentsWithAssociativeArrays {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         System.out.println(transliteration("Юлия"));
         System.out.println(countChar("BananaChou"));
         System.out.println(statChar("BananaChou"));
+        System.out.println(freqWords("resources/pushkin.txt"));
     }
     public static Map<Character, String> createTransliterationTable() {
         char[] rus = {'а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я'};
@@ -51,4 +54,21 @@ public class ExperimentsWithAssociativeArrays {
         }
         return freq;
     }
+
+
+    private static Map<String, Integer> freqWords(String fileName) throws FileNotFoundException {
+        Map<String, Integer> freq = new HashMap<>();
+        File f = new File(fileName);
+        try (Scanner in = new Scanner(f, "utf8").useDelimiter("[(.*?;:\\{\\}\\[\\]!\\\"\\r\\n\\,\\\\»\\\\«\\\\—\\s]+")) {
+            while (in.hasNext()) {
+                String temp = in.next();
+                freq.put(temp, freq.getOrDefault(temp, 0) + 1);
+            }
+        }
+        //сделать сортировку
+        //добавить разные виды Map
+        return freq;
+    }
+
+
 }
