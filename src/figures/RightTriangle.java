@@ -3,10 +3,10 @@ package figures;
 import static java.lang.Math.pow;
 
 public class RightTriangle implements Figure {
-    private float side1;
-    private float side2;
+    private double side1;
+    private double side2;
 
-    public RightTriangle(float side1, float side2) {
+    public RightTriangle(double side1, double side2) {
         this.side1 = side1;
         this.side2 = side2;
     }

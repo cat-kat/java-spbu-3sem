@@ -2,24 +2,19 @@ package figures;
 
 import static java.lang.Math.pow;
 
-public class Square extends Rectangle {
+public class Square extends Parallelepiped {
 
-    public Square(float side) {
+    public Square(double side) {
         super(side, side);
     }
 
     @Override
     public double area() {
-        return pow(width, 2);
-    }
-
-    @Override
-    public double perimiter() {
-        return 4*width;
+        return pow(side1, 2);
     }
 
     @Override
     public String info() {
-        return "Квадрат со стороной " + width;
+        return "Квадрат со стороной " + side1;
     }
 }

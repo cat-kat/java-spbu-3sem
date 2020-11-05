@@ -1,27 +1,18 @@
 package figures;
 
-public class Rectangle implements Figure {
-    protected float width;
-    protected  float height;
-
-    public Rectangle(float width, float height) {
-        this.height = height;
-        this.width = width;
+public class Rectangle extends Parallelepiped{
+    public Rectangle(double width, double height) {
+        super(width, height);
     }
 
     @Override
     public double area() {
-        return height*width;
-    }
-
-    @Override
-    public double perimiter() {
-        return 2*width+2*height;
+        return side1*side2;
     }
 
     @Override
     public String info() {
-        return "Прямоугольник с высотой " + height + " и шириной " + width;
+        return "Прямоугольник с высотой " + side1 + " и шириной " + side2;
     }
 }
 

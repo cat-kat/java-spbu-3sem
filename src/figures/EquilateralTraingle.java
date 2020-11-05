@@ -2,7 +2,7 @@ package figures;
 import static java.lang.Math.pow;
 
 public class EquilateralTraingle implements Figure {
-    private float side;
+    private double side;
 
     public EquilateralTraingle(float side) {
         this.side = side;

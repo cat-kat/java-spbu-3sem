@@ -3,7 +3,7 @@ package figures;
 import static java.lang.Math.pow;
 
 public class Circle implements Figure {
-    private float radius;
+    private double radius;
 
     public Circle (float radius) {
         this.radius = radius;
@@ -17,6 +17,12 @@ public class Circle implements Figure {
     @Override
     public double perimiter() {
         return 2*Math.PI*radius;
+    }
+
+
+    public double capacity() {
+        return pow(radius, 2)/(2*radius);
+
     }
 
     @Override
