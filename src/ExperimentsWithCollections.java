@@ -201,10 +201,9 @@ public class ExperimentsWithCollections {
 
     public static void findWords(Set<String> t, String s) throws IOException {
         File f = new File(s);
-        try (Scanner in = new Scanner(f, "utf8")) {
+        try (Scanner in = new Scanner(f, "utf8").useDelimiter("[^а-яА-Я]+")) {
             while (in.hasNext()) {
-                String word = in.next().toLowerCase().replaceAll("[^а-яА-Я0-9\\s]", "");
-                ;
+                String word = in.next().toLowerCase();
                 t.add(word);
             }
         }
