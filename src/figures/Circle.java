@@ -21,7 +21,7 @@ public class Circle implements Figure {
 
 
     public double capacity() {
-        return pow(radius, 2)/(2*radius);
+        return 1/(4*Math.PI);
 
     }
 

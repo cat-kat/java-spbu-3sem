@@ -1,10 +1,10 @@
 package figures;
 
-public abstract class Parallelepiped implements Figure{
+public abstract class Parallelogram implements Figure{
     protected double side1;
     protected double side2;
 
-    public Parallelepiped(double side1, double side2) {
+    public Parallelogram(double side1, double side2) {
         this.side2 = side2;
         this.side1 = side1;
     }

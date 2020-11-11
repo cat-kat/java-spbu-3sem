@@ -2,7 +2,7 @@ package figures;
 
 import static java.lang.Math.pow;
 
-public class Rhombus extends Parallelepiped {
+public class Rhombus extends Parallelogram {
     private double diag1;
     private double diag2;
 

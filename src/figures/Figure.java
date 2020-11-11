@@ -1,5 +1,7 @@
 package figures;
 
+import static java.lang.Math.pow;
+
 public interface Figure {
 
     double area();
@@ -10,7 +12,7 @@ public interface Figure {
     } */
 
     default double capacity() {
-        return area()/perimiter();
+        return area()/pow(perimiter(),2);
     }
     String info();
 }

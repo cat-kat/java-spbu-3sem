@@ -2,7 +2,7 @@ package figures;
 
 import static java.lang.Math.pow;
 
-public class Square extends Parallelepiped {
+public class Square extends Rectangle {
 
     public Square(double side) {
         super(side, side);
