@@ -93,6 +93,24 @@ public class ExperimentsWithCollections {
         System.out.println("Игры с set-ами:");
         findWordsSet("resources/pushkin.txt");
 
+
+        List<String> list1 = List.of("abc", "xyz", "ooo");
+
+        // на экране появится
+        //   Элементов в списке: 3
+        //   abc
+        //   xyz
+        //   ooo
+        printList(list1);
+
+        List<String> list2 = List.of("abc", "xyz", "ooo");
+
+        // на экране появится
+        //   Элементов в списке: 3
+        //   1: abc
+        //   2: xyz
+        //   3: ooo
+        printListWithIndexes(list2);
     }
 
     public static List<Integer> makeListInt() {
@@ -108,6 +126,7 @@ public class ExperimentsWithCollections {
         return result;
     }
 
+
     public static List<String> reverseListHonestly(List<String> a) {
         List<String> reverseList = new ArrayList<>();
         for (int i = a.size() - 1; i >= 0; i--) reverseList.add(a.get(i));
@@ -120,6 +139,8 @@ public class ExperimentsWithCollections {
             a.remove(i);
         }
     }
+
+
 
     public static List<String> deleteEvenIndexHonestly(List<String> a) {
         List<String> resultList = new ArrayList<>();
@@ -212,6 +233,15 @@ public class ExperimentsWithCollections {
             System.out.print(word + " ");
         }
         System.out.println();
+    }
+
+    public static void printList(List<String> a) {
+        for (String i: a) System.out.println(i);
+    }
+
+    public static void printListWithIndexes(List<String> a) {
+        int k = 0;
+        for (String i: a) System.out.println(k++ + " " + i);
     }
 
 
