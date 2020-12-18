@@ -14,6 +14,7 @@ public class ExperimentsWithFigures {
             System.out.println(i.area());
             System.out.println(i.perimiter());
             System.out.println(i.capacity());
+            System.out.println(Figure.capacity(i));
             System.out.println("*---------------------------------*");
         }
 
