@@ -9,7 +9,5 @@ public abstract class Parallelogram implements Figure{
         this.side1 = side1;
     }
 
-    public abstract double area();
-
     public double perimiter() { return 2*side1 + 2*side2; }
 }

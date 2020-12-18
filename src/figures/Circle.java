@@ -19,12 +19,6 @@ public class Circle implements Figure {
         return 2*Math.PI*radius;
     }
 
-
-    public double capacity() {
-        return 1/(4*Math.PI);
-
-    }
-
     @Override
     public String info() {
         return "Круг с радиусом " + radius;

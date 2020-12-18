@@ -9,11 +9,6 @@ public class Square extends Rectangle {
     }
 
     @Override
-    public double area() {
-        return pow(side1, 2);
-    }
-
-    @Override
     public String info() {
         return "Квадрат со стороной " + side1;
     }
