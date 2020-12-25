@@ -7,11 +7,11 @@ import java.util.Scanner;
 
 public class ExperimentsWithDictionary {
     public static void main(String[] args) {
-        List<DictionaryEntry> a = readDictionary("resources/dictionary.txt");
+        List<DictionaryEntry> a = readDictionary("dictionary.txt");
         //for (DictionaryEntry i: a) System.out.println(i.getWord() + "=" + i.getTranslation());
 
-        readQueries(a, "resources/strict-queries.txt", "resources/answer.txt");
-        fullTextSearch(a, "resources/full-text-search.txt");
+        readQueries(a, "strict-queries.txt", "answer.txt");
+        fullTextSearch(a, "full-text-search.txt");
     }
 
     public static List<DictionaryEntry> readDictionary(String filename) {
